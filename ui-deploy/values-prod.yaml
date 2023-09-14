@@ -1,0 +1,17 @@
+app:
+  replicas: 1
+  image: vikashashoke/ui
+  env: prod
+  computeres:
+    limits:
+      cpu: 1
+      memory: 5Gi
+    requests:
+      cpu: 1
+      memory: 5Gi
+
+hpa:
+  enabled: true
+  maxReplicas: 10
+  minReplicas: 4
+  targetCPUUtilizationPercentage: 100
